@@ -1,0 +1,23 @@
+{
+    "name": "courses",
+    "main": "worker.js",
+    "compatibility_date": "2024-09-23",
+    "d1_databases": [
+        {
+            "binding": "AUTH_DB",
+            "database_name": "global-auth",
+            "database_id": "ba736065-1d46-450b-a083-efc8ba935939"
+        },
+        {
+            "binding": "DB",
+            "database_name": "courses",
+            "database_id": "8fa40436-d869-42b1-ade6-d98d0669f321"
+        }
+    ],
+    "routes": [
+        {
+            "pattern": "111iridescence.org/courses*",
+            "zone_name": "111iridescence.org"
+        }
+    ]
+}

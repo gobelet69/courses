@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS sections (
+  id TEXT PRIMARY KEY,
+  username TEXT NOT NULL,
+  name TEXT NOT NULL,
+  position INTEGER NOT NULL DEFAULT 0,
+  hidden INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS tiles (
+  id TEXT PRIMARY KEY,
+  section_id TEXT NOT NULL,
+  username TEXT NOT NULL,
+  name TEXT NOT NULL,
+  url TEXT NOT NULL,
+  emoji TEXT NOT NULL DEFAULT '📚',
+  position INTEGER NOT NULL DEFAULT 0,
+  created_at INTEGER NOT NULL
+);
