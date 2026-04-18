@@ -311,6 +311,7 @@ function esc(s) {
 
 function renderHeader(username) {
     const id = 'cuw';
+    const appsId = 'capps';
     return `
   <a href="/" style="text-decoration:none;display:flex;align-items:center;gap:10px;flex-shrink:0">
     <span style="width:36px;height:36px;background:linear-gradient(135deg,#A855F7,#EC4899);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.05em;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.7),0 0 4px rgba(255,255,255,.95);flex-shrink:0;box-shadow:0 2px 8px rgba(168,85,247,.35),0 0 20px rgba(168,85,247,.45)">111</span>
@@ -345,7 +346,27 @@ function renderHeader(username) {
         </a>
       </div>
     </div>
-    <script>document.addEventListener('click',e=>{const w=document.getElementById('${id}');if(w&&!w.contains(e.target))w.classList.remove('open');});<\/script>
+    <div class="user-wrap" id="${appsId}">
+      <button class="user-btn" onclick="document.getElementById('${appsId}').classList.toggle('open')">
+        Apps
+        <svg class="caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="dd">
+        <div class="dd-hdr">
+          <div class="dd-name">Switch app</div>
+          <div class="dd-sub">111iridescence webapps</div>
+        </div>
+        <a href="/" class="ddl">🏠 Hub</a>
+        <a href="/vault" class="ddl">🔒 Vault</a>
+        <a href="/habits" class="ddl">📈 Habits</a>
+        <a href="/todo" class="ddl">✅ Todo</a>
+        <a href="/courses" class="ddl">🎓 Courses</a>
+        <a href="/editor" class="ddl">📝 Editor</a>
+        <a href="/dashboard" class="ddl">📊 Dashboard</a>
+        <a href="/feed" class="ddl">📰 Feed</a>
+      </div>
+    </div>
+    <script>document.addEventListener('click',e=>{const w=document.getElementById('${id}');const a=document.getElementById('${appsId}');if(w&&!w.contains(e.target))w.classList.remove('open');if(a&&!a.contains(e.target))a.classList.remove('open');});<\/script>
   </div>`;
 }
 
